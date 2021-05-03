@@ -1,0 +1,5 @@
+#!/bin/sh
+# My genious personal diary script =)
+
+DATE=$(date +%Y-%m-%d)
+cat >> $DIARY_PATH/$DATE.md

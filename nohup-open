@@ -1,3 +1,4 @@
 #!/bin/sh
+# test
 # trick from https://wiki.archlinux.org/title/Midnight_Commander#Opening_files
 nohup xdg-open "$@" &

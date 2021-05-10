@@ -2,4 +2,8 @@
 # My genious personal diary script =)
 
 DATE=$(date +%Y-%m-%d)
-cat >> $DIARY_PATH/$DATE.md
+EXT=md
+cd $DIARY_PATH
+cat >> $DATE.$EXT
+git add *.$EXT
+git commit -am $DATE && git push

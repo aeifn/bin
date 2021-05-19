@@ -3,7 +3,8 @@
 
 DATE=$(date +%Y-%m-%d)
 EXT=md
+DIARY_PATH=~/diary
 cd $DIARY_PATH
-cat >> $DATE.$EXT
+rlwrap cat >> $DATE.$EXT
 git add *.$EXT
 git commit -am $DATE && git push

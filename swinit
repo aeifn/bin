@@ -1,8 +1,13 @@
 #!/bin/sh
 # start sway on ArchLinux
-# probably will work on BSD too
+# will work on BSD too
+
+# required packages: sway, dmenu-wayland
+
+eval $(ssh-agent)
 
 #https://community.kde.org/Kdenlive/Development#Wayland
+export XDG_RUNTIME_DIR=/tmp
 export QT_QPA_PLATFORM=wayland-egl
 export SDL_VIDEODRIVER=wayland
 #https://wiki.archlinux.org/index.php/Wayland
@@ -13,4 +18,4 @@ export XDG_SESSION_TYPE=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
 export XKB_DEFAULT_LAYOUT=us
-exec dbus-run-session sway
+exec sway

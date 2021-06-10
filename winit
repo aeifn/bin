@@ -5,7 +5,7 @@
 # required packages:
 #  sway
 #  alacritty
-#  dmenu-wayland
+#  dmenu or dmenu-wayland
 #  dbus
 
 #https://community.kde.org/Kdenlive/Development#Wayland

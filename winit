@@ -1,0 +1,31 @@
+#!/bin/sh
+# start sway on ArchLinux
+# will work on FreeBSD too
+
+# required packages:
+#  sway
+#  alacritty
+#  dmenu-wayland
+#  dbus
+
+#https://community.kde.org/Kdenlive/Development#Wayland
+#export QT_QPA_PLATFORM=wayland-egl
+#export QT_QPA_PLATFORM=wayland
+#export SDL_VIDEODRIVER=wayland
+
+#https://wiki.archlinux.org/index.php/Wayland
+#export CLUTTER_BACKEND=wayland
+export MOZ_ENABLE_WAYLAND=1
+#export LIBGL_ALWAYS_SOFTWARE=1
+export XDG_SESSION_TYPE=wayland
+export XDG_RUNTIME_DIR=/tmp/$(id -u)-xdg
+mkdir -p XDG_RUNTIME_DIR
+#export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+#export XKB_DEFAULT_LAYOUT=us
+#export LIBVA_DRIVER_NAME=i965
+
+exec dbus-run-session sway
+
+# Other lightweight wayland compositors
+#exec dbus-run-session hikari
+#exec dbus-run-session wayfire
